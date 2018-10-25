@@ -9,12 +9,11 @@ class Navbar extends Component {
 
   handleChange=(e)=>{
     console.log(e.target);
-    if (e.target.innerText == "Sign Out") {
+    if (e.target.innerText == "Sign Out" || e.target.className == "sign out icon") {
       this.props.handleLogOut()
     } else if (e.target.innerText == "Main Page" || e.target.className == "home icon") {
       this.props.handleMainPage()
     } else {
-      // debugger
       this.props.handleProfile()
     }
   }

@@ -20,7 +20,7 @@ const RecipeDetail = (props) => {
   </div>
 
   <div>
-    Cooking Time: {props.recipe.cooking_time}
+    Cooking Time: {props.recipe.cooking_time} mins
   </div>
 
   <div>

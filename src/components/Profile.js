@@ -88,12 +88,14 @@ class Profile extends Component {
       if (recipe.user_id === this.props.currentUser.id) {
         position = this.state.userRecipes.indexOf(recipe)
         this.setState({
-          userRecipes: [...this.state.userRecipes.splice(0, position), ...this.state.userRecipes.splice(position + 1)]
+          userRecipes: [...this.state.userRecipes.slice(0, position), ...this.state.userRecipes.slice(position + 1)]
         })
       } else {
         position = this.state.userCollections.indexOf(recipe)
+        // debugger
+        console.log([...this.state.userCollections.slice(position + 1)]);
         this.setState({
-          userCollections: [...this.state.userCollections.splice(0, position), ...this.state.userCollections.splice(position + 1)]
+          userCollections: [...this.state.userCollections.slice(0, position), ...this.state.userCollections.slice(position + 1)]
         })
       }
       // .then(collections => collections.find(collection => collection))
